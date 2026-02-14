@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Menú Especial Gaby </title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container { padding: 20px; }
+        h1 { font-size: 32px; color: #b3003c; }
+        h2 { color: #800040; }
+        p { font-size: 18px; color: #4d0026; }
+
+        .menu {
+            background: rgba(255,255,255,0.7);
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 20px;
+            width: 85%;
+            max-width: 400px;
+        }
+
+        button {
+            padding: 15px 25px;
+            font-size: 18px;
+            margin: 10px;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .yes { background-color: #ff3366; color: white; }
+        .no { background-color: #999; color: white; position: absolute; }
+
+        .carta {
+            display: none;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            width: 80%;
+            max-width: 500px;
+            animation: fadeIn 1s;
+        }
+
+        @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+    </style>
+</head>
+<body>
+
+<div id="contenido-principal" class="container">
+    <h1>Menú Especial Gaby </h1>
+
+    <div class="menu">
+        <h2>Entrada</h2>
+        <p>Risas contigo </p>
+        <h2>Plato Fuerte</h2>
+        <p>Una cita especial este sábado en Chili's </p>
+        <h2>Postre</h2>
+        <p>Muchos momentos más juntos </p>
+    </div>
+
+    <p>Este día ya lo hemos festejado por 3 años...</p>
+    <p>¿Aceptas ser mi Valentín siempre? </p>
+
+    <button class="yes" onclick="aceptar()">Sí, siempre </button>
+    <button class="no" onmouseover="mover()">No </button>
+</div>
+
+<div id="seccion-carta" class="carta">
+    <h2 style="color: #b3003c;"> Tu carta</h2>
+    <p style="text-align: justify; line-height: 1.6;">
+        Soy el hombre mas afortunado de tenerte como compañía. Yo quiero que no solo hoy seas mi Valentín, sino siempre. Quiero estar contigo mucho tiempo, eres una persona especial para mí, eres la mejor. Te amo mucho. Hoy no es un día especial, ya que todos han sido especiales desde que te conocí. Te amo.
+    </p>
+    <p> <b>Nos vemos el sábado en Chili's</b> </p>
+</div>
+
+<div id="player"></div>
+
+<script>
+    // Carga la API de YouTube
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            height: '0',
+            width: '0',
+            videoId: 'ozv4q2ov3Mk', // La canción que elegiste
+            events: { 'onReady': onPlayerReady }
+        });
+    }
+
+    function onPlayerReady(event) {
+        // El reproductor está listo
+    }
+
+    function aceptar() {
+        // 1. Reproduce la música
+        player.playVideo();
+
+        // 2. Cambia la vista
+        document.getElementById('contenido-principal').style.display = 'none';
+        document.getElementById('seccion-carta').style.display = 'block';
+    }
+
+    function mover() {
+        var btn = document.querySelector(".no");
+        btn.style.top = Math.random() * (window.innerHeight - 50) + "px";
+        btn.style.left = Math.random() * (window.innerWidth - 100) + "px";
+    }
+</script>
+
+</body>
+</html>
