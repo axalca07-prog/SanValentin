@@ -2,130 +2,120 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Men˙ Especial Gaby </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men√∫ Especial Gaby üíñ</title>
     <style>
         body {
             text-align: center;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #ffdde1, #ee9ca7);
             margin: 0;
             padding: 0;
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
         }
-
-        .container { padding: 20px; }
-        h1 { font-size: 32px; color: #b3003c; }
-        h2 { color: #800040; }
-        p { font-size: 18px; color: #4d0026; }
-
+        .container { padding: 20px; width: 100%; }
         .menu {
-            background: rgba(255,255,255,0.7);
-            margin: 20px auto;
-            padding: 20px;
-            border-radius: 20px;
-            width: 85%;
-            max-width: 400px;
-        }
-
-        button {
-            padding: 15px 25px;
-            font-size: 18px;
-            margin: 10px;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 25px;
             border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        h1 { color: #b3003c; font-size: 28px; }
+        h2 { color: #800040; font-size: 20px; margin-top: 20px; }
+        p { color: #4d0026; font-size: 16px; line-height: 1.5; }
+        .btn-group { margin-top: 30px; position: relative; height: 100px; }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 30px;
             border: none;
             cursor: pointer;
             transition: 0.3s;
+            font-weight: bold;
         }
-
         .yes { background-color: #ff3366; color: white; }
-        .no { background-color: #999; color: white; position: absolute; }
-
+        .no { background-color: #999; color: white; position: absolute; left: 50%; transform: translateX(-50%); }
         .carta {
             display: none;
             background: white;
             padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
-            margin-top: 20px;
-            width: 80%;
-            max-width: 500px;
-            animation: fadeIn 1s;
+            border-radius: 20px;
+            width: 85%;
+            max-width: 450px;
+            margin: 20px auto;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            animation: aparecer 1s ease-out;
         }
-
-        @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+        @keyframes aparecer { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
 
-<div id="contenido-principal" class="container">
-    <h1>Men˙ Especial Gaby </h1>
-
+<div id="pantalla1" class="container">
     <div class="menu">
+        <h1>Men√∫ Especial Gaby üíñ</h1>
         <h2>Entrada</h2>
-        <p>Risas contigo </p>
+        <p>Risas contigo ‚ú®</p>
         <h2>Plato Fuerte</h2>
-        <p>Una cita especial este s·bado en Chili's </p>
+        <p>Una cita especial este s√°bado en Chili's üî•üå∂Ô∏è</p>
         <h2>Postre</h2>
-        <p>Muchos momentos m·s juntos </p>
+        <p>Muchos momentos m√°s juntos üíï</p>
+        <hr style="border: 0.5px solid #ffdde1; margin: 20px 0;">
+        <p><b>Este d√≠a ya lo hemos festejado por 3 a√±os...</b></p>
+        <p>¬øAceptas ser mi Valent√≠n siempre?</p>
+        <div class="btn-group">
+            <button class="yes" onclick="abrirCarta()">S√≠, siempre üíï</button>
+            <button class="no" id="btnNo" onmouseover="escapar()">No üôà</button>
+        </div>
     </div>
-
-    <p>Este dÌa ya lo hemos festejado por 3 aÒos...</p>
-    <p>øAceptas ser mi ValentÌn siempre? </p>
-
-    <button class="yes" onclick="aceptar()">SÌ, siempre </button>
-    <button class="no" onmouseover="mover()">No </button>
 </div>
 
-<div id="seccion-carta" class="carta">
-    <h2 style="color: #b3003c;"> Tu carta</h2>
-    <p style="text-align: justify; line-height: 1.6;">
-        Soy el hombre mas afortunado de tenerte como compaÒÌa. Yo quiero que no solo hoy seas mi ValentÌn, sino siempre. Quiero estar contigo mucho tiempo, eres una persona especial para mÌ, eres la mejor. Te amo mucho. Hoy no es un dÌa especial, ya que todos han sido especiales desde que te conocÌ. Te amo.
+<div id="pantalla2" class="carta">
+    <h2 style="color: #ff3366;">üíå Mi Carta para ti</h2>
+    <p style="text-align: left;">
+        Soy el hombre m√°s afortunado de tenerte como compa√±√≠a. Yo quiero que no solo hoy seas mi Valent√≠n, sino siempre. Quiero estar contigo mucho tiempo, eres una persona especial para m√≠, eres la mejor. Te amo mucho. 
+        <br><br>
+        Todos hoy no es un d√≠a especial, ya que todos han sido especiales desde que te conoc√≠. Te amo.
     </p>
-    <p> <b>Nos vemos el s·bado en Chili's</b> </p>
+    <h3 style="color: #b3003c;">¬°Nos vemos en Chili's! üî•</h3>
 </div>
 
-<div id="player"></div>
+<div id="youtube-player"></div>
 
 <script>
-    // Carga la API de YouTube
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('youtube-player', {
+            height: '0', width: '0',
+            videoId: 'x3bfa3DZ8JM', // ID de Better - Khalid
+            playerVars: { 'autoplay': 0, 'controls': 0 }
+        });
+    }
+
     var tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
     var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-    var player;
-    function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-            height: '0',
-            width: '0',
-            videoId: 'ozv4q2ov3Mk', // La canciÛn que elegiste
-            events: { 'onReady': onPlayerReady }
-        });
+    function abrirCarta() {
+        if(player) player.playVideo();
+        document.getElementById('pantalla1').style.display = 'none';
+        document.getElementById('pantalla2').style.display = 'block';
     }
 
-    function onPlayerReady(event) {
-        // El reproductor est· listo
-    }
-
-    function aceptar() {
-        // 1. Reproduce la m˙sica
-        player.playVideo();
-
-        // 2. Cambia la vista
-        document.getElementById('contenido-principal').style.display = 'none';
-        document.getElementById('seccion-carta').style.display = 'block';
-    }
-
-    function mover() {
-        var btn = document.querySelector(".no");
-        btn.style.top = Math.random() * (window.innerHeight - 50) + "px";
-        btn.style.left = Math.random() * (window.innerWidth - 100) + "px";
+    function escapar() {
+        var btn = document.getElementById("btnNo");
+        var x = Math.random() * (window.innerWidth - btn.offsetWidth);
+        var y = Math.random() * (window.innerHeight - btn.offsetHeight);
+        btn.style.left = x + "px";
+        btn.style.top = y + "px";
+        btn.style.position = "fixed";
     }
 </script>
-
 </body>
 </html>
